@@ -174,6 +174,9 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ApiRepositoryProvider::class,
+        App\Providers\RepositoryFacadeProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
     ],
 
@@ -226,7 +229,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'User' => App\Http\Facades\Repository\UserFacade::class,
+        'CancerType' => App\Http\Facades\Repository\CancerTypeFacade::class,
+        'Enquiry' => App\Http\Facades\Repository\EnquiryFacade::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 
 ];
