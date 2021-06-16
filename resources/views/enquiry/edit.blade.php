@@ -40,22 +40,20 @@
                                         <textarea name="description" id="description" placeholder="Plan Description" class="form-control input-sm required">{{ $planData->description ?? '' }}</textarea>
                                     </div>
                                 </div>
-
+                                @if (!empty($documents))
                                 <div class="form-group">
                                     <label class="col-sm-4 float-left">Old Plans <span class="error">*</span></label>
                                     <div class="col-sm-6 col-md-10">
-                                    @if (!empty($documents))
                                         <ul>
                                         @foreach ($documents as $item)
                                             <li>
                                                 <a href="{{url('/download/' .$item->id )}}">{{ $item->file_name }}</a>
                                             </li>  
                                         @endforeach    
-                                        </ul>
-                                    @endif    
+                                        </ul>                                        
                                     </div>
                                 </div>
-
+                                @endif
                                 {{ csrf_field() }}
                                 <input type="hidden" name="id" id="id" value="{{$details->id}}" />
                                 <div class="col-sm-6 col-md-8 savebtn">

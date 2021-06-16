@@ -70,10 +70,10 @@ class EnquiryFacadeClass
                 $row[] = $enquiryData->Specialization->type;
             }
 
-            if (!empty($enquiryData->Plan) && $enquiryData->Plan->doctor_id == Auth::user()->id) {
-                $row[] = view('datatable.action', ['module' => "enquiry",'id' => $enquiryData->id])->render();
-            } else {
+            if (Auth::user()->role == "admin" || (!empty($enquiryData->Plan) && $enquiryData->Plan->doctor_id != Auth::user()->id)) {
                 $row[] = '';
+            } else {
+                $row[] = view('datatable.action', ['module' => "enquiry",'id' => $enquiryData->id])->render();
             }            
             $appData[] = $row;
         }
