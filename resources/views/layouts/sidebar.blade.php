@@ -5,21 +5,14 @@
                 <div class="left-sidebar-content">
                     <ul class="sidebar-elements">
                         <li class="divider">{{trans('app.menu')}}</li>
-                        <li class="{{$dashboardTab ?? ''}}" title="Dashboard"><a href="{{url('/dashboard')}}"><i
-                                        class="icon mdi mdi-home"></i><span>{{trans('app.admin_home')}}</span></a>
-                        </li>                        
-                        @if(Auth::user()->role == "admin")
-                            <li title="cancer_type" class="{{$cancerTypeTab ?? ''}}"><a href="{{url('/cancer_type')}}"><i
-                                            class="icon mdi mdi-face"></i></i><span>{{trans('app.cancer_type')}}</span></a>
-                            </li>
-                            <li title="doctor" class="{{$userTab ?? ''}}"><a href="{{url('/doctor')}}"><i
-                                            class="icon mdi mdi-face"></i></i><span>{{trans('app.doctor')}}</span></a>
-                            </li>
-                        @endif
-                        <li title="enquiry" class="{{$enquiryTab ?? ''}}"><a href="{{url('/enquiry')}}"><i
-                                            class="icon mdi mdi-face"></i></i><span>{{trans('app.enquiry')}}</span></a>
+                        @if($currentPlan != 'unlimited')
+                        <li class="{{$upgradePlanTab ?? ''}}" title="upgradePlan"><a href="{{url('/upgrade-plan')}}"><i
+                                        class="icon mdi mdi-home"></i><span>Upgrade Plan</span></a>
                         </li>
-                        
+                        @endif
+                        <li title="shortner" class="{{$shortnerTab ?? ''}}"><a href="{{url('/shortner')}}"><i
+                                        class="icon mdi mdi-face"></i></i><span>{{trans('app.shortner')}}</span></a>
+                        </li>                                                
                     </ul>
                     </li>
                     </ul>

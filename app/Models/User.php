@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','specialization','role'
+        'name', 'email', 'password'
     ];
 
     /**
@@ -36,15 +36,5 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
-
-    /**
-     * get specialization from cancer type model 
-     *
-     * @return void
-     */
-    public function Specialization()
-    {
-        return $this->hasOne('App\Models\CancerType', 'id', 'specialization');
-    }
+    ];    
 }

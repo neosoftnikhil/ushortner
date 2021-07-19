@@ -229,9 +229,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'User' => App\Http\Facades\Repository\UserFacade::class,
-        'CancerType' => App\Http\Facades\Repository\CancerTypeFacade::class,
-        'Enquiry' => App\Http\Facades\Repository\EnquiryFacade::class,
+        'Shortner' => App\Http\Facades\Repository\ShortnerFacade::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
     ],
 

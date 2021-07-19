@@ -26,9 +26,7 @@ class ApiRepositoryProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('App\Repositories\Contract\UserInterface','App\Repositories\Eloquent\UserRepository');
-        $this->app->bind('App\Repositories\Contract\CancerTypeInterface','App\Repositories\Eloquent\CancerTypeRepository');
-        $this->app->bind('App\Repositories\Contract\EnquiryInterface','App\Repositories\Eloquent\EnquiryRepository');
+        $this->app->bind('App\Repositories\Contract\ShortnerInterface','App\Repositories\Eloquent\ShortnerRepository');
     }
 
     /**

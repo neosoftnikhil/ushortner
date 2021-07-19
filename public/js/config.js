@@ -136,7 +136,7 @@ app.datepicker = function (param) {
 
 app.validate = {
     init:function (params) {
-        if(typeof params != undefined) {
+        if(typeof params != 'undefined') {
             $("#app_form").validate(params);
         }else{
             $("#app_form").validate();

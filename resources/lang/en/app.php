@@ -14,7 +14,7 @@ return [
     */
 
      //Translation of General words
-     'app_name' => 'Book Appointment',
+     'app_name' => 'UShortner',
      'change_password' => ':app_name | Change Password',
      'admin_home' => 'Dashboard',
      'management' => 'Management',
@@ -28,6 +28,7 @@ return [
      'inactive' => 'Inactive',
      'select' => 'Select',
      'change_status' => 'Change Status',
+     'shortner' => 'Shortner',
 
     //Translation of layouts folder in views
     'available' => 'Available',

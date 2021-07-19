@@ -28,8 +28,6 @@ class RepositoryFacadeProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('user', 'App\Http\Facades\Repository\UserFacadeClass');
-	    $this->app->singleton('cancer_type', 'App\Http\Facades\Repository\CancerTypeFacadeClass');
-        $this->app->singleton('enquiry', 'App\Http\Facades\Repository\EnquiryFacadeClass');
+        $this->app->singleton('shortner', 'App\Http\Facades\Repository\ShortnerFacadeClass');
     }
 }
