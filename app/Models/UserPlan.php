@@ -28,6 +28,9 @@ class UserPlan extends Model
     {
         $plans = UserPlan::with(['Plan'])->where('user_id', Auth::user()->id)->get();
         $planRange = [];
+        if (count($plans) == 0) {
+            return 0;
+        }
         foreach($plans as $item) {
             if($item->Plan['range'] == 'unlimited') {
                 return $item->Plan['range'];

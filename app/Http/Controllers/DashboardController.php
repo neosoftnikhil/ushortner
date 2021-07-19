@@ -30,7 +30,7 @@ class DashboardController extends Controller
     {
 
         $currentPlan = UserPlan::getCurrentPlan();
-        if ($currentPlan == 'unlimited') {
+        if ($currentPlan === 'unlimited') {
             return redirect('shortner');
         }
         $plan = Plan::get();
@@ -48,7 +48,7 @@ class DashboardController extends Controller
      */
     public function redirectShortUrl($shortCode) {
         $shortUrl = url('/').'/'.$shortCode;
-        $url = Shortner::where('short_url', $shortUrl)->first();
+        $url = Shortner::where('short_url', $shortUrl)->where('status', 1)->first();
         if (empty($url->url)) {
             return abort(404);
         }

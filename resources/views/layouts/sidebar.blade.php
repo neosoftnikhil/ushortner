@@ -5,7 +5,7 @@
                 <div class="left-sidebar-content">
                     <ul class="sidebar-elements">
                         <li class="divider">{{trans('app.menu')}}</li>
-                        @if($currentPlan != 'unlimited')
+                        @if($currentPlan !== 'unlimited')
                         <li class="{{$upgradePlanTab ?? ''}}" title="upgradePlan"><a href="{{url('/upgrade-plan')}}"><i
                                         class="icon mdi mdi-home"></i><span>Upgrade Plan</span></a>
                         </li>

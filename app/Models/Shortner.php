@@ -15,6 +15,9 @@ class Shortner extends Model
     public static function checkPlanValidity()
     {
         $currentPlan = UserPlan::getCurrentPlan();
+        if ($currentPlan == 0) {
+            return false;
+        }
         $userUrlCount = Shortner::where('user_id', Auth::user()->id)->count();
         if ($currentPlan == 'unlimited') {
             return true;
